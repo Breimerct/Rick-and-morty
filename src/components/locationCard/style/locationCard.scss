@@ -1,0 +1,11 @@
+.location-card {
+  position: relative;
+  width: 147px;
+
+  &-icon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -80%);
+  }
+}

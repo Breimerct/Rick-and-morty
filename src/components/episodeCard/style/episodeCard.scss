@@ -1,0 +1,12 @@
+.episode-card {
+  min-width: 222.66px;
+  max-width: 340px;
+  width: 100%;
+}
+
+@media (width <= $breakpoint-sm-max) {
+  .episode-card {
+    max-width: initial;
+    min-width: 100%;
+  }
+}

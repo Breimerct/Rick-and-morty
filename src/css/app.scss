@@ -1,0 +1,135 @@
+.body--dark {
+  --scroll-color-thumb: rgba(49, 49, 49, 0.81);
+  --scroll-color-thumb-hover: rgba(85, 85, 85, 0.97);
+}
+
+.body--light {
+  --scroll-color-thumb: rgba(203, 203, 203, 0.89);
+  --scroll-color-thumb-hover: rgba(175, 175, 175, 0.8);
+}
+
+/* Scroll bar stylings */
+::-webkit-scrollbar {
+  scroll-behavior: smooth;
+  width: 7px;
+  height: 10px;
+
+  /* Track */
+  &-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  &-thumb {
+    background: var(--scroll-color-thumb);
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  &-thumb:hover {
+    background: var(--scroll-color-thumb-hover);
+  }
+}
+
+* {
+}
+
+.main-content {
+  width: 80%;
+  height: 100%;
+}
+
+.text-truncate {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title {
+  gap: 10px;
+  height: 50px;
+
+  &-text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+}
+
+.justify {
+  justify-content: space-between;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+.character-text-info {
+  margin: 0 0 0 5px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: .8rem;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+}
+
+.filter-blur {
+  -webkit-backdrop-filter: blur(15px) !important;
+  backdrop-filter: blur(15px) !important;
+  background-color: var(--bgColor) !important;
+}
+
+.dialog-content {
+  transition: all .5s ease;
+  .q-dialog__inner {
+    margin: 0 auto !important;
+    width: 70% !important;
+  }
+}
+
+@media screen and (width <= $breakpoint-md-min) {
+  .dialog-content {
+    .q-dialog__inner {
+      padding: 0;
+      width: 100% !important;
+    }
+  }
+}
+
+@media (width <= $breakpoint-xs-max) {
+  .justify {
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+@media (width <= $breakpoint-sm-min) {
+  .main-content {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px 20px 20px;
+  }
+
+  .landing {
+    .high-light-image {
+      position: absolute;
+      width: 674px;
+      height: 334px;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      opacity: 0.4;
+    }
+  }
+}

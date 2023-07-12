@@ -1,0 +1,51 @@
+.character-detail {
+  &-info {
+    &-locations {
+      justify-content: end;
+    }
+  }
+}
+
+.character-name {
+  justify-content: space-between;
+}
+
+.justify-text {
+  justify-content: space-between;
+}
+
+.hide-in-mobile {
+  display: none;
+}
+
+@media screen and (width >= $breakpoint-sm-max) {
+  .hide-in-desktop {
+    display: none;
+  }
+
+  .hide-in-mobile {
+    display: initial;
+  }
+}
+
+@media screen and (width <= $breakpoint-sm-max) {
+  .character-detail {
+    &-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &-locations {
+        justify-content: center;
+      }
+    }
+  }
+
+  .character-name {
+    justify-content: center;
+  }
+
+  .justify-text {
+    justify-content: center;
+  }
+}
