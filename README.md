@@ -1,6 +1,4 @@
-# costs-and-expenses (costs-and-expenses)
-
-costs-and-expenses
+# Rick And Morty
 
 ## Install the dependencies
 ```bash
