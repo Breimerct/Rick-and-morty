@@ -5,16 +5,17 @@
     full-width
     v-model="showDialog"
     position="bottom"
-    class="dialog-content"
+    class="relative-position"
   >
-    <q-card class="relative-position dialog-content q-pa-md">
-      <q-btn
-        dense
-        rounded
-        @click="closeDialog"
-        class="absolute absolute-top-right q-ma-sm z-fab"
-        icon="mdi-close"
-      />
+    <q-btn
+      dense
+      rounded
+      @click="closeDialog"
+      class="absolute absolute-top-right q-ma-sm z-fab"
+      icon="mdi-close"
+    />
+
+    <q-card class="dialog-content q-pa-md">
       <slot/>
     </q-card>
   </q-dialog>
