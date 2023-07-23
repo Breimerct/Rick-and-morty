@@ -1,6 +1,7 @@
 <template>
   <section class="navigation full-width">
     <q-tabs
+      mobile-arrows
       :class="customClass"
       :align="align"
       :dense="dense"
