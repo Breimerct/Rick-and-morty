@@ -3,7 +3,7 @@
     <header-content>
       <presentation />
     </header-content>
-    <q-page-container class="flex flex-center">
+    <q-page-container class="flex flex-center non-selectable">
       <q-page class="main-content q-mb-xl">
         <router-view/>
       </q-page>

@@ -1,7 +1,7 @@
 <template>
   <section class="full-height">
     <nav>
-      <navigation-links align="left" :routes-links="routes" />
+      <navigation-links :align="AlignProp.left" :routes-links="routes" />
     </nav>
     <router-view/>
   </section>
@@ -11,6 +11,7 @@
 import NavigationLinks from 'components/navigationLinks/NavigationLinks.vue'
 import { ref } from 'vue'
 import { RouteProp } from 'components/navigationLinks/routeProp.model'
+import { AlignProp } from 'src/components/navigationLinks/alignProp.enum'
 
 const routes = ref<RouteProp[]>([
   { nameUrl: 'favoriteCharacters', title: 'Characters', icon: 'mdi-account-group-outline' },

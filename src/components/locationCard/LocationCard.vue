@@ -1,51 +1,58 @@
 <template>
-  <q-card class="location-card q-mt-xl">
-    <q-avatar class="location-card-icon">
-      <img :src="icon" alt="location-img">
-    </q-avatar>
+  <like-component
+    @on-doble-click="dblclick"
+    icon-size="50px"
+    top="50%"
+  >
+    <q-card class="location-card q-mt-xl">
+      <q-avatar class="location-card-icon">
+        <img :src="icon" alt="location-img">
+      </q-avatar>
 
-    <q-card-section class="column items-center content-center q-pb-none">
-      <p class="q-ma-none text-truncate text-center">
-        {{ location.name || '' }}
-      </p>
+      <q-card-section class="column items-center content-center q-pb-none">
+        <p class="q-ma-none text-truncate text-center">
+          {{ location.name || '' }}
+        </p>
 
-      <p class="text-truncate text-center">
-        {{ location.type || location.name || '' }}
-      </p>
-    </q-card-section>
+        <p class="text-truncate text-center">
+          {{ location.type || location.name || '' }}
+        </p>
+      </q-card-section>
 
-    <q-card-section class="column flex-center items-center q-pt-none">
-      <div>
-        <q-btn
-          rounded
-          outline
-          :disable="location.id === 0"
-          @click="seeMore"
-          size="9px"
-          label="see more"
-          icon="mdi-information"
-          color="primary"
-        />
-      </div>
+      <q-card-section class="column flex-center items-center q-pt-none">
+        <div>
+          <q-btn
+            rounded
+            outline
+            :disable="location.id === 0"
+            @click="seeMore"
+            size="9px"
+            label="see more"
+            icon="mdi-information"
+            color="primary"
+          />
+        </div>
 
-      <div class="q-mt-sm">
-        <q-btn
-          round
-          dense
-          flat
-          @click="toggleFavorite"
-          :disable="location.id === 0"
-          :icon="isFavoriteIcon"
-          color="primary"
-        />
-      </div>
-    </q-card-section>
-  </q-card>
+        <div class="q-mt-sm">
+          <q-btn
+            round
+            dense
+            flat
+            @click="toggleFavorite"
+            :disable="location.id === 0"
+            :icon="isFavoriteIcon"
+            color="primary"
+          />
+        </div>
+      </q-card-section>
+    </q-card>
+  </like-component>
 </template>
 
 <script lang="ts" setup>
 import { ILocation } from 'stores/interfaces/ILocation'
 import iconPlanet from 'assets/icons/planet-earth.webp'
+import likeComponent from '../likeComponent.vue'
 import { useRouter } from 'vue-router'
 import { computed } from 'vue'
 
@@ -93,6 +100,12 @@ const seeMore = (): void => {
 const toggleFavorite = (): void => {
   getLocation.value.isFavorite = !getLocation.value.isFavorite
   emit('toggle-favorite', getLocation.value)
+}
+
+const dblclick = () => {
+  if (!getLocation.value.isFavorite) {
+    toggleFavorite()
+  }
 }
 </script>
 

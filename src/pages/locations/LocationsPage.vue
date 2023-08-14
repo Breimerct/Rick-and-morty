@@ -23,14 +23,14 @@
         :page="currentPage"
         @change:page="changePage"
       >
-        <section class="row flex-center">
+        <section class="row flex-center q-gutter-md">
           <list-location-loading
             v-if="isLoading"
           />
 
           <div
             v-else
-            class="col-6 col-xs-6 col-sm-4 col-md-3 col-lg-2 flex flex-center"
+            class="col-6 col-xs-6 col-sm-4 col-md-2 col-lg-2 flex flex-center"
             v-for="location in locations"
             :key="location.id"
           >
